@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rizwan's Laptop Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .sidebar {
+      width: 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-right: 20px;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      flex: 1;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      width: calc(33.333% - 20px);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 15px;
+    }
+    .price {
+      color: #e74c3c;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Premium Laptops</h1>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Filter by Brand</h3>
+      <label><input type="checkbox"> HP</label><br>
+      <label><input type="checkbox"> Lenovo</label><br>
+      <label><input type="checkbox"> Dell</label><br>
+      <label><input type="checkbox"> Toshiba</label><br>
+    </aside>
+
+    <main class="product-grid">
+      <!-- HP Laptop -->
+      <div class="card">
+        <img src="hp-image.jpg" alt="HP Laptop">
+        <h3>HP 15 Series</h3>
+        <p class="price">Rs. 150,500</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <!-- Lenovo Laptop -->
+      <div class="card">
+        <img src="lenovo-image.jpg" alt="Lenovo ThinkPad">
+        <h3>Lenovo ThinkPad E16</h3>
+        <p class="price">Rs. 450,000</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <!-- Dell Laptop -->
+      <div class="card">
+        <img src="dell-image.jpg" alt="Dell Pro 15">
+        <h3>Dell Pro 15</h3>
+        <p class="price">Rs. 164,990</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <!-- Toshiba Laptop -->
+      <div class="card">
+        <img src="toshiba-image.jpg" alt="Toshiba Dynabook">
+        <h3>Toshiba Dynabook</h3>
+        <p class="price">Rs. 80,000</p>
+        <button>Add to Cart</button>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
