@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rizwan Laptop Store</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f4f6f8;color:#172033}
+header{background:linear-gradient(135deg,#111827,#2563eb);color:white;padding:30px 20px;text-align:center}
+header h1{font-size:34px} header p{margin-top:8px;color:#dbeafe}
+.search{padding:22px;text-align:center;background:white}
+.search input{width:90%;max-width:600px;padding:15px 18px;border:1px solid #ddd;border-radius:30px;font-size:16px;outline:none}
+.brands{display:flex;gap:10px;overflow-x:auto;padding:15px 20px;background:white}
+.brands button{border:0;background:#eef2ff;color:#1e40af;padding:11px 20px;border-radius:25px;cursor:pointer;white-space:nowrap;font-weight:bold}
+.brands button:hover{background:#2563eb;color:white}
+.products{max-width:1200px;margin:auto;padding:25px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.08);transition:.3s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:200px;object-fit:contain;background:#f8fafc;padding:15px}
+.info{padding:18px}.brand{color:#2563eb;font-size:14px;font-weight:bold}
+.info h2{font-size:19px;margin:7px 0}.specs{color:#64748b;font-size:14px;line-height:1.6}
+.price{color:#16a34a;font-size:22px;font-weight:bold;margin-top:12px}
+.buy{display:block;text-align:center;text-decoration:none;background:#2563eb;color:white;padding:12px;border-radius:9px;margin-top:14px;font-weight:bold}
+footer{background:#111827;color:white;text-align:center;padding:30px 20px;margin-top:30px}
+footer h2{margin-bottom:8px}
+@media(max-width:600px){
+ header h1{font-size:27px}.products{grid-template-columns:repeat(2,1fr);padding:15px 10px;gap:12px}
+ .card img{height:140px}.info{padding:12px}.info h2{font-size:16px}.price{font-size:18px}.specs{font-size:12px}
+}
+@media(max-width:400px){.products{grid-template-columns:1fr}.card img{height:200px}}
+</style>
+</head>
+<body>
+<header>
+<h1>💻 Rizwan Laptop Store</h1>
+<p>Latest Laptops • Best Prices • Trusted Store</p>
+</header>
+
+<div class="search">
+<input type="text" id="search" placeholder="🔎 Search laptop..." onkeyup="searchLaptop()">
+</div>
+
+<div class="brands">
+<button onclick="filterBrand('all')">All</button>
+<button onclick="filterBrand('HP')">HP</button>
+<button onclick="filterBrand('Lenovo')">Lenovo</button>
+<button onclick="filterBrand('Dell')">Dell</button>
+<button onclick="filterBrand('Toshiba')">Toshiba</button>
+<button onclick="filterBrand('Acer')">Acer</button>
+<button onclick="filterBrand('ASUS')">ASUS</button>
+<button onclick="filterBrand('Apple')">MacBook</button>
+</div>
+
+<div class="products">
+
+<div class="card" data-brand="HP">
+<img src="https://images.unsplash.com/photo-1601070204954-bb0c7d1b6a9a?auto=format&fit=crop&w=800&q=80" alt="HP Laptop">
+<div class="info"><span class="brand">HP</span><h2>HP 15 Laptop</h2><p class="specs">Core Ultra 5 • 8GB RAM • 512GB SSD • 15.6"</p><p class="price">Rs. 189,999</p><a class="buy" href="#">Buy Now</a></div>
+</div>
+
+<div class="card" data-brand="Lenovo">
+<img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&q=80" alt="Lenovo Laptop">
+<div class="info"><span class="brand">Lenovo</span><h2>Lenovo IdeaPad Slim 3</h2><p class="specs">Core i5 • 8GB RAM • 512GB SSD • 15.6"</p><p class="price">Rs. 177,999</p><a class="buy" href="#">Buy Now</a></div>
+</div>
+
+<div class="card" data-brand="Dell">
+<img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=800&q=80" alt="Dell Laptop">
+<div class="info"><span class="brand">Dell</span><h2>Dell 15</h2><p class="specs">Core i5 • 8GB RAM • 512GB SSD • 15.6"</p><p class="price">Rs. 172,999</p><a class="buy" href="#">Buy Now</a></div>
+</div>
+
+<div class="card" data-brand="Toshiba">
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80" alt="Toshiba Laptop">
+<div class="info"><span class="brand">Toshiba</span><h2>Toshiba Satellite</h2><p class="specs">Core i5 • 8GB RAM • 256GB SSD • 15.6"</p><p class="price">Rs. 69,999</p><a class="buy" href="#">Buy Now</a></div>
+</div>
+
+<div class="card" data-brand="Acer">
+<img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=800&q=80" alt="Acer Laptop">
+<div class="info"><span class="brand">Acer</span><h2>Acer Nitro V15</h2><p class="specs">Core i5 • 16GB RAM • 512GB SSD • RTX 5050</p><p class="price">Rs. 299,999</p><a class="buy" href="#">Buy Now</a></div>
+</div>
+
+<div class="card" data-brand="ASUS">
+<img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=800&q=80" alt="ASUS Laptop">
+<div class="info"><span class="brand">ASUS</span><h2>ASUS VivoBook</h2><p class="specs">Core i5 • 8GB RAM • 512GB SSD • 15.6"</p><p class="price">Rs. 179,999</p><a class="buy" href="#">Buy Now</a></div>
+</div>
+
+<div class="card" data-brand="Apple">
+<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="MacBook">
+<div class="info"><span class="brand">Apple</span><h2>MacBook Air</h2><p class="specs">Apple M4 • 16GB RAM • 512GB SSD • 13.6"</p><p class="price">Rs. 394,999</p><a class="buy" href="#">Buy Now</a></div>
+</div>
+
+</div>
+
+<footer>
+<h2>💻 Rizwan Laptop Store</h2>
+<p>📞 Contact us for laptop orders</p>
+<p>© 2026 Rizwan Laptop Store</p>
+</footer>
+
+<script>
+function filterBrand(brand){
+ document.querySelectorAll(".card").forEach(card=>{
+   card.style.display=(brand==="all"||card.dataset.brand===brand)?"block":"none";
+ });
+}
+function searchLaptop(){
+ const input=document.getElementById("search").value.toLowerCase();
+ document.querySelectorAll(".card").forEach(card=>{
+   card.style.display=card.innerText.toLowerCase().includes(input)?"block":"none";
+ });
+}
+</script>
+</body>
+</html>
